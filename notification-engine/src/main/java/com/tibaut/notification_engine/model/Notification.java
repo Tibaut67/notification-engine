@@ -27,7 +27,7 @@
         private User receiver;
         private String sender;
         private String message;
-        String Status;
+        private String Status;
         private LocalDateTime createdAt;
 
         @jakarta.persistence.PrePersist
@@ -35,4 +35,8 @@
             this.createdAt = LocalDateTime.now();
         }
 
+
+        public void setUser(User user) {
+            this.receiver = user;
+        }
     }

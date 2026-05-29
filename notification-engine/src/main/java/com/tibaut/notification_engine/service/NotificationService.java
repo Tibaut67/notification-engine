@@ -40,5 +40,4 @@ public class NotificationService {
             throw new RuntimeException("User not found with id: " + userId);
         }
     }
-
 }

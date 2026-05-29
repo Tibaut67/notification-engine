@@ -9,9 +9,7 @@ package com.tibaut.notification_engine.controller;
 import com.tibaut.notification_engine.model.User;
 import com.tibaut.notification_engine.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,5 +22,10 @@ public class UserController {
     @GetMapping
     public List<User> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    @PostMapping
+    public User createUser(@RequestBody User user) {
+        return userRepository.save(user);
     }
 }
